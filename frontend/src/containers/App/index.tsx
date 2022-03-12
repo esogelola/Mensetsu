@@ -1,26 +1,77 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 import * as ROUTES from "../../constants/routes";
 import "./index.scss";
+import {
+  AuthContextProvider,
+  useAuthState,
+} from "../../components/Firebase/firebase";
+
+interface authProps {
+  component: any;
+  path: string;
+  exact?: boolean;
+}
+const AuthenticatedRoute: React.FC<authProps> = ({
+  component: C,
+  ...props
+}) => {
+  const { isAuthenticated } = useAuthState();
+  console.log(`AuthenticatedRoute: ${isAuthenticated}`);
+  return (
+    <Route
+      {...props}
+      render={(routeProps) =>
+        isAuthenticated ? <C {...routeProps} /> : <Redirect to="/login" />
+      }
+    />
+  );
+};
+
+const UnauthenticatedRoute: React.FC<authProps> = ({
+  component: C,
+  ...props
+}) => {
+  const { isAuthenticated } = useAuthState();
+  console.log(`UnauthenticatedRoute: ${isAuthenticated}`);
+  return (
+    <Route
+      {...props}
+      render={(routeProps) =>
+        !isAuthenticated ? <C {...routeProps} /> : <Redirect to="/" />
+      }
+    />
+  );
+};
 
 function App() {
   return (
-    <Router>
-      <div className="ms-app">
-        {/*Navigation*/}
-        <div className="ms-app__page">
-          <Switch>
-            <Route path={ROUTES.APP} component={ROUTES.APP_PAGE_CONTAINER} />
-            <Route
-              exact
-              path={ROUTES.LANDING}
-              component={ROUTES.LANDING_PAGE_CONTAINER}
-            />
-          </Switch>
+    <AuthContextProvider>
+      <Router>
+        <div className="ms-app">
+          {/*Navigation*/}
+          <div className="ms-app__page">
+            <Switch>
+              <UnauthenticatedRoute
+                path={ROUTES.APP}
+                component={ROUTES.APP_PAGE_CONTAINER}
+              />
+              <UnauthenticatedRoute
+                exact
+                path={ROUTES.LANDING}
+                component={ROUTES.LANDING_PAGE_CONTAINER}
+              />
+            </Switch>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </AuthContextProvider>
   );
 }
 
