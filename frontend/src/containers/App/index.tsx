@@ -8,10 +8,7 @@ import {
 
 import * as ROUTES from "../../constants/routes";
 import "./index.scss";
-import {
-  AuthContextProvider,
-  useAuthState,
-} from "../../components/Firebase/firebase";
+import { AuthContextProvider, useAuthState } from "../../contexts/AuthContext";
 import Navigation from "../../components/Navigation";
 
 interface authProps {
@@ -69,7 +66,7 @@ function App() {
                 path={ROUTES.LANDING}
                 component={ROUTES.LANDING_PAGE_CONTAINER}
               />
-              <UnauthenticatedRoute
+              <AuthenticatedRoute
                 exact
                 path={ROUTES.VIDEO_CHAT}
                 component={ROUTES.VIDEO_CHAT_PAGE_CONTAINER}
