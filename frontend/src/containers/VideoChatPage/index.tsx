@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
-
+import io from "socket.io-client";
+import EVENTS from "../../constants/events";
 import "./index.scss";
 
-type CameraPageProps = {};
+type VideoChatPageProps = {};
+const socketUrl = "/";
 
-const CameraPage = ({}: CameraPageProps) => {
-  const [questionId, setQuestionId] = useState(1);
-  const [timer, setTimer] = useState(0);
-  const [started, setStarted] = useState(false);
-  const [currentTranscript, setCurrentTranscript] = useState("hello");
+const VideoChatPage = ({}: VideoChatPageProps) => {
+  const [socket, setSocket] = useState<Object | null>(null);
+  const [users, setUsers] = useState(false);
+  const initSocket = () => {
+    let socket = io(socketUrl);
+    setSocket({ socket });
+    socket.on("connect", () => console.log("Connected"));
+    // socket.on(EVENTS.LOGOUT, () => {
+    //   setUsers(false);
+    // });
+    // socket.on(EVENTS.LOGOUT, () => {
+    //   setUsers(false);
+    // });
+  };
+  useEffect(() => {}, []);
 
-  useEffect(() => {
-    if (started) {
-      setTimeout(() => {
-        setTimer(timer + 1);
-      }, 1000);
-    }
-  }, [timer]);
-  
   return (
     <div className="ms-camera">
       <div className="ms-camera__section">
@@ -27,4 +31,4 @@ const CameraPage = ({}: CameraPageProps) => {
   );
 };
 
-export default CameraPage;
+export default VideoChatPage;
