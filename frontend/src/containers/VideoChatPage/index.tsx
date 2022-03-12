@@ -17,7 +17,7 @@ const CameraPage = ({}: CameraPageProps) => {
       }, 1000);
     }
   }, [timer]);
-
+  
   return (
     <div className="ms-camera">
       <div className="ms-camera__section">
