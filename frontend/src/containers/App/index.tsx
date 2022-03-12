@@ -58,6 +58,11 @@ function App() {
           <div className="ms-app__page">
             <Switch>
               <UnauthenticatedRoute
+                exact
+                path={ROUTES.SETSU_AI}
+                component={ROUTES.SETSU_AI_PAGE_CONTAINER}
+              />
+              <UnauthenticatedRoute
                 path={ROUTES.APP}
                 component={ROUTES.APP_PAGE_CONTAINER}
               />
@@ -71,6 +76,7 @@ function App() {
                 path={ROUTES.VIDEO_CHAT}
                 component={ROUTES.VIDEO_CHAT_PAGE_CONTAINER}
               />
+              <Route component={ROUTES.NOTFOUND_PAGE_CONTAINER} />
             </Switch>
           </div>
         </div>
