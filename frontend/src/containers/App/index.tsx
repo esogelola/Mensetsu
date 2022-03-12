@@ -12,6 +12,7 @@ import {
   AuthContextProvider,
   useAuthState,
 } from "../../components/Firebase/firebase";
+import Navigation from "../../components/Navigation";
 
 interface authProps {
   component: any;
@@ -55,7 +56,8 @@ function App() {
     <AuthContextProvider>
       <Router>
         <div className="ms-app">
-          {/*Navigation*/}
+          <Navigation />
+
           <div className="ms-app__page">
             <Switch>
               <UnauthenticatedRoute
@@ -66,6 +68,11 @@ function App() {
                 exact
                 path={ROUTES.LANDING}
                 component={ROUTES.LANDING_PAGE_CONTAINER}
+              />
+              <UnauthenticatedRoute
+                exact
+                path={ROUTES.VIDEO_CHAT}
+                component={ROUTES.VIDEO_CHAT_PAGE_CONTAINER}
               />
             </Switch>
           </div>
