@@ -1,7 +1,11 @@
 // AppContextProvider.tsx
 import React from "react";
-import { AuthContextProvider } from "./providers/AuthContext";
+// import { AuthContextProvider } from "./AuthContext";
 
-import { combineComponents } from "../utils/combineComponents";
-const providers = [AuthContextProvider];
-export const AppContextProvider = combineComponents(...providers);
+// import { combineComponents } from "../utils/combineComponents";
+// const providers = [AuthContextProvider];
+// export const AppContextProvider = combineComponents(...providers);
+
+console.trace()
+
+export {}
