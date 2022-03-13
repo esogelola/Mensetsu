@@ -1,0 +1,37 @@
+.circle-signup-1{
+  position: absolute;
+  top: 0vh;
+  left: calc(60vw - 300px);
+  z-index: -1;
+}
+.circle-signup-2{
+  position: absolute;
+  top: calc(0vh + 200px);
+  left: calc(100vw - 300px);
+  z-index: -1;
+}
+.circle-signup-3{
+  position: absolute;
+  top: calc(100vh - 300px);
+  left: calc(100vw - 200px);
+  z-index: -1;
+  
+}
+.circle-signup-4{
+  position: absolute;
+  top: calc(100vh - 59px);
+  left: calc(100vw - 400px);
+  z-index: -1;
+}
+.circle-signup-5{
+  position: absolute;
+  top: calc(100vh - 395px);
+  left: 0vh;
+  z-index: -1;
+}
+.circle-signup-6{
+  position: absolute;
+  top: calc(0vh + 200px);
+  left: calc(0vw + 300px);
+  z-index: -1;
+}

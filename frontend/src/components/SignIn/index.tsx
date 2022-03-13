@@ -1,4 +1,7 @@
 import { Checkbox, Container } from "@mui/material";
+import { ReactComponent as Google } from "../../assets/akar-icons_google-fill.svg";
+import { ReactComponent as Facebook } from "../../assets/akar-icons_facebook-fill.svg";
+import { ReactComponent as Apple } from "../../assets/ant-design_apple-filled.svg";
 import React from "react";
 
 import "./index.scss";
@@ -9,9 +12,9 @@ function SignIn() {
       <form className="signin-form">
         <h1>Sign in to Mensetsu</h1>
         <p>Enter the details below.</p>
-        <button>google</button>
-        <button>facebook</button>
-        <button>apple</button>
+        <button><Google /></button>
+        <button><Facebook /></button>
+        <button><Apple /></button>
         <span className="divider">
           <div className="line" />
           <span>OR</span>
