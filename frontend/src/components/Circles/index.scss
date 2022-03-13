@@ -1,89 +1,65 @@
 .main-circle-1{
   position: absolute;
-  background-color: #FE93AB;
-  top: -100px;
-  padding: 600px 600px ;
-  border-radius: 50%;
+  top: 0px;
+  height: 100vh;
+  width: 950px;
   z-index: -1;
-  left:  calc(100vw - 800px);
+  left:  calc(100vw - 950px);
 }
 
 .main-circle-2{
   position: absolute;
-  background-color: #8B91FF;
-  top: -250px;
-  padding: 15rem;
-  border-radius: 50%;
+  top: 0px;
+  left: 0px;
   z-index: -1;
-  left:  calc(0vw - 200px);
+
 }
 
 .main-circle-3{
   position: absolute;
-  background-color: #8B91FF;
-  top: calc(100vh - 150px);
-  padding: 7rem;
-  border-radius: 50%;
+  top: calc(100vh - 155px);
   z-index: -1;
   left:  calc(0vw + 100px);
 }
 
 .main-circle-4{
   position: absolute;
-  background-color: #FFD527;
   top: calc(100vh - 300px);
-  padding: 4rem;
-  border-radius: 50%;
   z-index: -1;
-  left:  calc(0vw + 550px);
+  left:  calc(0vw + 600px);
 }
 
 .main-circle-5{
   position: absolute;
-  background-color: #450016;
-  top: calc(100vh - 800px);
-  padding: 1rem;
-  border-radius: 50%;
+  top: calc(0vh + 250px);
   z-index: -1;
-  left:  calc(0vw + 500px);
+  left:  calc(0vw + 550px);
 }
 
 .main-circle-6{
   position: absolute;
-  background-color: #FE93AB;
-  top: calc(100vh - 675px);
-  padding: 1.5rem;
-  border-radius: 50%;
+  top: calc(0vh + 350px);
   z-index: -1;
   left:  calc(0vw + 200px);
 }
 
 .main-circle-7{
   position: absolute;
-  background-color: #8B91FF;
   top: calc(100vh - 500px);
-  padding: 3rem;
-  border-radius: 50%;
   z-index: -1;
   left:  calc(0vw + 350px);
 }
 
 .main-circle-8{
   position: absolute;
-  background-color: #FFD527;
   top: calc(100vh - 500px);
-  padding: 1.5rem;
-  border-radius: 50%;
   z-index: -1;
   left:  calc(0vw + 50px);
 }
 
 .main-circle-9{
   position: absolute;
-  background-color: #3052A9;
   top: calc(100vh - 500px);
-  padding: 2rem;
-  border-radius: 50%;
   z-index: -1;
   left:  calc(100vw - 130px);
 }

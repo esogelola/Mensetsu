@@ -1,5 +1,5 @@
 // html{
-//   overflow: hidden;
+//   overflow-x: hidden;
 // }
 
 .App {
@@ -7,4 +7,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: transparent;
+  height: calc(100vh - 64px);
 }
