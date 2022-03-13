@@ -9,6 +9,7 @@ import {
 import * as ROUTES from "../../constants/routes";
 import "./index.scss";
 import { AuthContextProvider, useAuthState } from "../../contexts/AuthContext";
+import { GlobalProvider } from "../../contexts/GlobalContext";
 
 import Navigation from "../../components/Navigation";
 
@@ -52,36 +53,38 @@ const UnauthenticatedRoute: React.FC<authProps> = ({
 function App() {
   return (
     <AuthContextProvider>
-      <Router>
-        <div className="ms-app">
-          <Navigation />
+      <GlobalProvider>
+        <Router>
+          <div className="ms-app">
+            <Navigation />
 
-          <div className="ms-app__page">
-            <Switch>
-              <UnauthenticatedRoute
-                exact
-                path={ROUTES.SETSU_AI}
-                component={ROUTES.SETSU_AI_PAGE_CONTAINER}
-              />
-              <UnauthenticatedRoute
-                path={ROUTES.APP}
-                component={ROUTES.APP_PAGE_CONTAINER}
-              />
-              <UnauthenticatedRoute
-                exact
-                path={ROUTES.LANDING}
-                component={ROUTES.LANDING_PAGE_CONTAINER}
-              />
-              <UnauthenticatedRoute
-                exact
-                path={ROUTES.VIDEO_CHAT}
-                component={ROUTES.VIDEO_CHAT_PAGE_CONTAINER}
-              />
-              <Route component={ROUTES.NOTFOUND_PAGE_CONTAINER} />
-            </Switch>
+            <div className="ms-app__page">
+              <Switch>
+                <UnauthenticatedRoute
+                  exact
+                  path={ROUTES.SETSU_AI}
+                  component={ROUTES.SETSU_AI_PAGE_CONTAINER}
+                />
+                <UnauthenticatedRoute
+                  path={ROUTES.APP}
+                  component={ROUTES.APP_PAGE_CONTAINER}
+                />
+                <UnauthenticatedRoute
+                  exact
+                  path={ROUTES.LANDING}
+                  component={ROUTES.LANDING_PAGE_CONTAINER}
+                />
+                <UnauthenticatedRoute
+                  exact
+                  path={ROUTES.VIDEO_CHAT}
+                  component={ROUTES.VIDEO_CHAT_PAGE_CONTAINER}
+                />
+                <Route component={ROUTES.NOTFOUND_PAGE_CONTAINER} />
+              </Switch>
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </GlobalProvider>
     </AuthContextProvider>
   );
 }

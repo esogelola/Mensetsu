@@ -3,14 +3,101 @@
 }
 
 .ms-setsu {
-  &__container {
+  &__container:not(.catLogoContainer) {
     height: 100%; // So that grids 1 & 4 go all the way down
-    min-height: 150; // Give minimum height to a div
+    min-height: 150px; // Give minimum height to a div
+    border: 1px solid black;
+    font-size: 30;
+    text-align: left;
+    background-color: #e1e1e1;
+    padding: 1rem;
+    &.containerTall {
+      min-height: 250px;
+    }
+
+    .video-container video {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    .question_box {
+      position: relative;
+      background-color: white;
+      border: 1px solid black;
+      padding: 1rem;
+
+      min-height: 300px; // Give minimum height to a div
+    }
+
+    .btn_group {
+      display: flex;
+      justify-content: space-evenly;
+      .btn {
+        border-radius: 10px;
+        min-width: 150px;
+        height: 50px;
+        background-color: #9f9f9f;
+      }
+      margin: 1rem;
+    }
+  }
+  .catLogo {
+    width: 100%;
+    max-width: 407px;
+    height: auto;
+  }
+
+  &__interviewContainer {
+    height: 100%; // So that grids 1 & 4 go all the way down
+    min-height: 30rem; // Give minimum height to a div
     border: 1px solid black;
     font-size: 30;
     text-align: center;
-  }
-  &.containerTall {
-    min-height: 250;
+    background-color: #ebeced;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    .inner {
+      color: #666666;
+      padding: 2rem;
+      .question_pill {
+        margin-bottom: 1.25rem;
+        max-width: 60%;
+        color: #565656;
+        border-left: 0.4rem solid #a66efa;
+        padding: 0.5rem;
+        border-radius: 3px;
+      }
+    }
+    .interviewQuestions {
+      margin-left: auto;
+      margin-right: 0;
+      margin-bottom: 1.25rem;
+      max-width: 60%;
+      background-color: #3d3d3d;
+      color: #f3f3f3;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      width: fit-content;
+    }
+    .text {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .recording_loading {
+      margin-left: auto;
+      margin-right: 0;
+      margin-bottom: 1.25rem;
+      max-width: 60%;
+      background-color: #3d3d3d;
+      color: #f3f3f3;
+      padding: 0.55rem 1rem 0.55rem 1rem;
+      border-radius: 0.5rem;
+      width: fit-content;
+    }
+    .loadingImage {
+      width: 36px;
+    }
   }
 }

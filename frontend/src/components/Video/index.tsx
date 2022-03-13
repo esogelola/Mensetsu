@@ -1,6 +1,12 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useContext,
+} from "react";
 import Webcam from "react-webcam";
-
+import { GlobalContext } from "../../contexts/GlobalContext";
 import * as faceapi from "@vladmandic/face-api";
 import { getForeheadCoords } from "../../utils/Camera";
 import "./index.scss";
@@ -11,6 +17,8 @@ interface ExpressionData {
 }
 
 function Video() {
+  const { setsuAI, setEmotion } = useContext<any>(GlobalContext);
+
   //   var VideoElement: React.RefObject<HTMLVideoElement> = useRef();
   const [currentEmotion, setCurrentEmotion] = useState<ExpressionData>({});
   const [videoElement, setVideoElement] = useState<any | null>(null);
@@ -50,6 +58,7 @@ function Video() {
             var mood = detection.expressions.asSortedArray()[0];
             // console.log(mood);
             setCurrentEmotion(mood);
+            setEmotion(mood);
           }
         }
       }, 1000);
@@ -71,7 +80,7 @@ function Video() {
             videoElement,
             new faceapi.TinyFaceDetectorOptions()
           );
-          console.log(detections);
+
           if (
             detections &&
             videoElement &&
@@ -101,21 +110,14 @@ function Video() {
     <div className="ms-video-component">
       <Webcam
         audio={false}
-        height={720}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
-        width={1280}
         mirrored={true}
         videoConstraints={videoConstraints}
       />
-      <h1>{currentEmotion.expression}</h1>
-      <canvas ref={canvasRef} id="primary-canvas" height={720} width={1280} />
-      <canvas
-        ref={tempCanvasRef}
-        id="secondary-canvas"
-        height={720}
-        width={1280}
-      />
+
+      {/* <canvas ref={canvasRef} id="primary-canvas" />
+      <canvas ref={tempCanvasRef} id="secondary-canvas" /> */}
       <img ref={imageRef} />
     </div>
   );
