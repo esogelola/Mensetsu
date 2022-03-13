@@ -48,7 +48,8 @@ function SetsuAIPage() {
       setCurrentIndex(newIndex);
     } else {
       // Submit here go to
-      console.log("submit page");
+
+      history.push("/setsu/stats");
     }
   };
   return (
