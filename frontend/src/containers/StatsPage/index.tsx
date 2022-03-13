@@ -7,6 +7,7 @@ import catLogo from "../../assets/solo-cat.svg";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import "./index.scss";
 import useQuestions from "../../hooks/useQuestions";
+import Navigation from "../../components/Navigation";
 
 function SetsuAIPage() {
   const { setsuAI } = useContext<any>(GlobalContext);
@@ -14,6 +15,7 @@ function SetsuAIPage() {
 
   return (
     <Grid container direction="row" spacing={2} className="ms-setsu">
+      <Navigation />
       <Grid item container direction="column" xs={2} spacing={2}>
         <h1>Your Results</h1>
         <Stack spacing={2}>
