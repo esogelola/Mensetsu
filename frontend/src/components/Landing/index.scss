@@ -4,8 +4,13 @@
   --signin-hero-input-width: 385px;
 }
 
+
+
+.signin-hero{
+
 .signin-hero {
   margin-left: 25px;
+
   margin-top: 89px;
   background-color: hsla(0, 0%, 0%, .05);
   width: 505px;
@@ -13,9 +18,11 @@
   display: flex;
   justify-content: center;
   border-radius: 30px;
-  border: 1px solid #ececec;
-  backdrop-filter: blur(15px);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.10);
+
+  border: 1px solid #ECECEC;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 4px #0000001a;
+
   h1 {
     margin: 0px;
     width: 300px;
@@ -32,8 +39,10 @@
   width: var(--signin-hero-input-width);
   height: 74px;
   margin: 25px 4px;
-  background-color: #aaaaaa1a;
-  border: 3px solid rgb(204, 204, 204);
+
+  background-color: transparent;
+  border: 3px solid #ececec80;
+
   border-radius: 15px;
   padding: 10px;
   font-size: 20px;
@@ -47,8 +56,10 @@
   border-radius: 15px;
   border: none;
   height: 74px;
-  width: calc((var(--signin-hero-input-width) / 2) - 28.5px);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  width: calc((var(--signin-hero-input-width) / 2 ) - 28.5px);
+  box-shadow: 0px 4px 4px #00000040;
+
   color: white;
   font-size: 20px;
 }
