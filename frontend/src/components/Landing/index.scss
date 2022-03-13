@@ -58,7 +58,17 @@
   margin: 25px 28.5px 25px 4px;
 }
 
+.get-started:hover {
+  transition: ease-in-out 0.1s;
+  background-color: rgb(255, 183, 199)
+}
+
 .demo {
   background-color: #450016;
   margin: 25px 4px 25px 28.5px;
 }
+
+.demo:hover {
+  background-color: #5e3643;
+}
+

@@ -79,6 +79,16 @@ function App() {
                   path={ROUTES.VIDEO_CHAT}
                   component={ROUTES.VIDEO_CHAT_PAGE_CONTAINER}
                 />
+                <UnauthenticatedRoute
+                  exact
+                  path={ROUTES.SIGN_IN} 
+                  component={ROUTES.SIGN_IN_PAGE_CONTAINER}                
+                />
+                <UnauthenticatedRoute
+                  exact
+                  path={ROUTES.SIGN_UP} 
+                  component={ROUTES.SIGN_UP_PAGE_CONTAINER}                
+                />
                 <Route component={ROUTES.NOTFOUND_PAGE_CONTAINER} />
               </Switch>
             </div>

@@ -3,6 +3,9 @@ import { ReactComponent as Google } from "../../assets/akar-icons_google-fill.sv
 import { ReactComponent as Facebook } from "../../assets/akar-icons_facebook-fill.svg";
 import { ReactComponent as Apple } from "../../assets/ant-design_apple-filled.svg";
 
+import { Link } from "react-router-dom";
+import * as ROUTES from "../../constants/routes";
+
 import "./index.scss";
 
 function SignUp() {
@@ -22,7 +25,12 @@ function SignUp() {
         <input type="text" name="name" id="name" placeholder="Name..."/>
         <input type="email" name="email" id="email" placeholder="Email..."/>
         <input type="password" name='password' id='password' placeholder='Password...' />
-        <input type="submit" value='Sign up' name='signup' id="signup"/>
+        <Link to={ ROUTES.APP}>
+          <input type="submit" value='Sign up' name='signup' id="signup"/>
+        </Link>
+        <Link to={ROUTES.SIGN_IN} className="no-underline">
+          <div className="login-link">Have an account?</div>
+        </Link>
       </form>
     </Container>
   );
