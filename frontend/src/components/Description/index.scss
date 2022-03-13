@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap');
 
 .product-description{
+  margin-top: 150px;
+  margin: 0px;
   font-family: 'Roboto';
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 500px;
   color: white;
   span{
     font-size: 60px;
     font-family: 'Fredoka One';
+    text-align: center;
   }
 
   p{
+    margin: 0px;
     font-size: 20px;
+    width: 500px;
+    text-align: center;
   }
+
 }

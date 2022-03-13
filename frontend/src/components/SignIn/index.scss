@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap');
+
+.signin-form {
+  font-family: 'Roboto';
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 732px;
+	h1 {
+		width: 732px;
+		margin: 0px;
+    font-family: "Fredoka One";
+    font-size: 40px;
+	}
+	p {
+		width: 732px;
+    font-size: 20px;
+    color: #8B8B8B;
+	}
+	button {
+		width: 218px;
+		height: 47px;
+		margin: 15px 0px;
+		border-radius: 15px;
+		border: 1px solid #8a8a8a;
+    background-color: white;
+	}
+
+	input {
+		width: 732px;
+		height: 53px;
+		margin: 15px 0px;
+		padding: 10px 39px;
+		font-size: 15px;
+		border-radius: 15px;
+		border: 1px solid #8a8a8a;
+    font-family: 'Roboto';
+
+  }
+
+  input::placeholder{
+    color: black;
+  }
+
+	input[type=checkbox] {
+		margin: 0px 10px;
+		height: fit-content;
+		width: fit-content;
+    transform: scale(1.5);
+	}
+
+	span {
+		margin-top: 65px;
+    font-size: 20px;
+    font-weight: 1000;
+    color: #450016;
+	}
+
+  .check-and-label{
+    margin-top: 65px;
+    font-size: 18px;
+    color: black;
+  }
+
+	input[type=submit]{
+		font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 20px;
+    background-color: #450016;
+    color: white;
+	}
+
+	.divider {
+		display: flex;
+    margin: 15px 0px;
+    align-items: center;
+		.line {
+			width: 344px;
+			height: 0px;
+			border-bottom: 2px solid #acacac;
+		}
+    span{
+      margin: 0px 10px;
+      font-weight: bold;
+      color: black;
+    }
+	}
+}
