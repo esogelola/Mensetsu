@@ -1,62 +1,11 @@
-:root{
-  --signin-hero-input-width : 385px;
-}
-
 .ms-app {
   &__page {
     margin: 15px;
   }
 }
 
-.signin-hero{
-  background-color: #f0f0f099;
-  width: 505px;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  border-radius: 30px;
-  border: 1px solid #ECECEC;
-  backdrop-filter: blur(20px);
-  h1 {
-    margin: 0px;
-    width: 300px;
-    font-size: 50px;
-  }
-  form {
-    width: 395px;
-    
-  }
-}
-
-.signin-hero-input {
-  width: var(--signin-hero-input-width);
-  height: 74px;
-  margin: 25px 4px;
-  background-color: transparent;
-  border: 3px solid #ECECEC;
-  border-radius: 15px;
-  padding: 10px;
-  font-size: 20px;
-  
-}
-
-.signin-hero-button {
-  border-radius: 15px;
-  border: none;
-  height: 74px;
-  width: calc((var(--signin-hero-input-width) / 2 ) - 28.5px);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: white;
-  font-size: 20px;
-
-}
-
-.get-started {
-  background-color: #fe93ab;
-  margin: 25px 28.5px 25px 4px;
-} 
-
-.demo {
-  background-color: #450016;
-  margin: 25px 4px 25px 28.5px;
+.MuiContainer-root{
+  margin: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
