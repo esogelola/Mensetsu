@@ -34,6 +34,15 @@ function MainPage() {
       </Grid>
       <div className="ms-main__topics">
         <h1 className="heading">SetsuAI Topics</h1>
+        <p
+          style={{
+            alignSelf: "flex-start",
+            marginTop: 0,
+            marginBottom: "1rem",
+          }}
+        >
+          Pick a topic and let Setsu help you!
+        </p>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
