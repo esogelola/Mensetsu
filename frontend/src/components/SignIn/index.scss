@@ -71,6 +71,12 @@
     color: white;
 	}
 
+	input[type=submit]:hover{
+		transition: ease-in-out 0.1s;
+    background-color: #450016cc;
+    color: white;
+	}
+
 	.divider {
 		display: flex;
     margin: 15px 0px;
@@ -85,5 +91,17 @@
       font-weight: bold;
       color: black;
     }
+	}
+
+	.signup-link{
+		color: black;
+		font-size: 20px;
+		
+	}
+	
+	.signup-link::after{
+		content: " Get Started!";
+		font-weight: bold;
+		color: #450016;
 	}
 }

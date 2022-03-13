@@ -4,6 +4,8 @@ import APP_PAGE_CONTAINER from "../containers/MainPage";
 import VIDEO_CHAT_PAGE_CONTAINER from "../containers/VideoChatPage";
 import SETSU_AI_PAGE_CONTAINER from "../containers/SetsuAIPage";
 import NOTFOUND_PAGE_CONTAINER from "../containers/NotFoundPage";
+import SIGN_UP_PAGE_CONTAINER from "../containers/SignupPage"
+import SIGN_IN_PAGE_CONTAINER from "../containers/SigninPage"
 // Export route paths
 export const LANDING = "/";
 export const APP = "/app";
@@ -28,4 +30,6 @@ export {
   VIDEO_CHAT_PAGE_CONTAINER,
   SETSU_AI_PAGE_CONTAINER,
   NOTFOUND_PAGE_CONTAINER,
+  SIGN_UP_PAGE_CONTAINER,
+  SIGN_IN_PAGE_CONTAINER,
 };
