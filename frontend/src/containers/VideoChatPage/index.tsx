@@ -4,9 +4,9 @@ import EVENTS from "../../constants/events";
 import "./index.scss";
 import Video from "../../components/Video";
 
-import { Typography, AppBar } from "@material-ui/core";
+import { Grid, Typography, AppBar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { ListItem } from '@mui/material'
 import VideoPlayer from "../../components/VideoCall/VideoPlayer";
 import Sidebar from "../../components/VideoCall/SideBar";
 import Notifications from "../../components/VideoCall/Notifications";
@@ -14,49 +14,52 @@ import Notifications from "../../components/VideoCall/Notifications";
 import { ContextProvider } from "../../contexts/SocketContext";
 import Navigation from "../../components/Navigation";
 
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    borderRadius: 15,
-    margin: "30px 100px",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "600px",
-    border: "2px solid black",
-
-    [theme.breakpoints.down("xs")]: {
-      width: "90%",
-    },
-  },
-  image: {
-    marginLeft: "15px",
-  },
-  wrapper: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    width: "100%",
-  },
-}));
-
 const VideoChatPage = () => {
-  const classes = useStyles();
   return (
+    <div className="ms-camera">
+    <div className="ms-camera__section">
     <ContextProvider>
-      <Navigation />
-      <div className="ms-camera">
-        <div className="ms-camera__section">
-          <Typography variant="h2" align="center">
-            Video Chat
-          </Typography>
+
+    <Grid container className="pageGrid">
+    <Grid item xs={7}>
+      <Grid container className="gridContainer2">
+        <Grid item xs={12}>
+
           <VideoPlayer />
-          <Sidebar>
-            <Notifications />
+        </Grid> 
+        <Grid item xs={12}>
+        <Sidebar>
+            
           </Sidebar>
+        </Grid> 
+        <Grid item xs={7}>
+
+        <div className="ms-setsu__container containerWide ">
+            <p className="containerHeading">Transcription</p>
+            <p> 
+            </p>
+          </div>
+        </Grid>
+        <Grid item xs={4}>
+        <div className="ms-setsu__container containerWide ">
+        <Notifications />
         </div>
-      </div>
+        </Grid>
+
+        </Grid>
+      
+    </Grid>
+    <Grid item xs={4}>
+    <div className="ms-setsu__container containerCode ">
+            <p className="containerHeading">Codeshare</p>
+            <p> 
+            </p>
+          </div>
+    </Grid>
+    </Grid>
     </ContextProvider>
+    </div>
+      </div>
   );
 };
 

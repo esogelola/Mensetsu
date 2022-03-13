@@ -1,0 +1,18 @@
+.video {
+    width: 500px;
+  }
+.gridContainer {
+    
+    display: grid;
+    gap: 0px;
+    justify-content: center;
+    align-content: center;
+    background-color:  #F5EEEE;
+    padding: 30px;
+    border-radius: 20px;
+  }
+.paper {
+    padding: '5px';
+    border: '2px solid black';
+    margin: '5px';
+  }
