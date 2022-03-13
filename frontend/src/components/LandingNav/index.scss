@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap');
+
+
+.landingnav {
+	display: flex;
+	position: absolute;
+	top: 0px;
+	height: 100px;
+	width: calc(100vw - 300px);
+	align-items: center;
+	justify-content: space-between;
+
+	.navlinks {
+		display: flex;
+		align-items: center;
+    font-family: 'Roboto';
+    font-size: 20px;
+
+    .navlink-item{
+      margin: 15px;
+      padding-right: 5px;
+      color: #939393;
+    }
+
+    .selected {
+      color: black;
+      border-bottom: 2px solid #F23861;
+    }
+	}
+
+	.navlogo {
+    font-family: 'Fredoka One';
+    font-size: 30px;
+    margin: 30px;
+	}
+
+  .login-btn{
+    border-radius: 15px;
+    border: none;
+    height: 64px;
+    width: calc((385px / 2) - 35.5px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 20px;
+    background-color: #450016;
+  }
+
+  .login-btn:hover{
+    background-color: #5e3643;
+  }
+}

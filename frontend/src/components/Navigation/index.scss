@@ -1,10 +1,26 @@
-.cn-nav {
+.ms-nav {
   button {
     margin: 5px;
   }
-
-  &__link {
-    color: white;
+  &__logo {
+    color: #4e2331;
     text-decoration: none;
+
+    font-size: xx-large;
+  }
+  &__stacked {
+    color: #4e2331;
+    text-decoration: none;
+    font-family: "Fredoka";
+    font-size: small;
+    font-weight: 100;
+    position: absolute;
+    padding-top: 40px;
+  }
+  &__link {
+    color: #4e2331;
+    text-decoration: none;
+    font-family: "Fredoka";
+    font-size: x-large;
   }
 }

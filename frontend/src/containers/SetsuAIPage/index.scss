@@ -1,0 +1,242 @@
+:root {
+  --signin-hero-input-width: 385px;
+}
+
+.ms-setsu {
+  padding: 3rem;
+
+  &__container:not(.catLogoContainer) {
+    height: 100%; // So that grids 1 & 4 go all the way down
+    min-height: 150px; // Give minimum height to a div
+    font-size: 30;
+    text-align: left;
+    background-color: #e1e1e1;
+    background: #f5eeee;
+    padding: 2rem;
+    border-radius: 20px;
+    .containerHeading {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 42px;
+      margin: 0;
+
+      color: #4e2331;
+    }
+    .topicText {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 48px;
+      margin: 0;
+      &.bg-1 {
+        color: #8b91ff;
+      }
+      &.bg-2 {
+        color: #ddc357;
+      }
+      &.bg-3 {
+        color: #fe93ab;
+      }
+      &.bg-4 {
+        color: #4e2331;
+      }
+      &.bg-5 {
+        color: #3152a9;
+      }
+      &.bg-6 {
+        color: #55cb84;
+      }
+
+      &.emotion-happy {
+        color: yellow;
+        -webkit-text-stroke: 1px black;
+      }
+      &.emotion-surprised {
+        color: white;
+        -webkit-text-stroke: 1px black;
+      }
+      &.emotion-disgusted {
+        color: darkgreen;
+      }
+      &.emotion-fearful {
+        color: purple;
+      }
+      &.emotion-sad {
+        color: blue;
+      }
+      &.emotion-angry {
+        color: red;
+      }
+    }
+
+    &.containerTall {
+      // min-height here 250px
+      max-height: 350px;
+    }
+    &.containerSmall {
+      max-height: 135px;
+      max-width: 256px;
+      padding: 1rem;
+    }
+    .video-container video {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    .question_box {
+      position: relative;
+      background-color: white;
+      border: 1px solid black;
+      padding: 1rem;
+
+      min-height: 300px; // Give minimum height to a div
+      .noteSection {
+        resize: none;
+
+        max-height: 196px;
+        max-width: 203px;
+      }
+    }
+
+    .btn_group {
+      display: flex;
+      justify-content: space-evenly;
+
+      .btn {
+        background: none;
+        color: inherit;
+        border: none;
+
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+
+        border-radius: 10px;
+        padding: 1rem;
+
+        background-color: #9f9f9f;
+        &__next {
+          background: none;
+          color: inherit;
+          border: none;
+
+          font: inherit;
+          cursor: pointer;
+          outline: inherit;
+          background: #fe93ab;
+          border-radius: 10px;
+          border: 0;
+          padding: 1rem;
+
+          &:hover {
+            box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+          }
+        }
+        &:hover {
+          box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+        }
+      }
+
+      margin: 1rem;
+    }
+  }
+  .catLogo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  .btn {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    padding: 2rem;
+    max-width: 256px;
+
+    &-stop {
+      background: #fe93ab;
+      border-radius: 10px;
+      border: 0;
+      color: white;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 48px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+      }
+    }
+  }
+  &__interviewContainer {
+    height: 100%; // So that grids 1 & 4 go all the way down
+    min-height: 30rem; // Give minimum height to a div
+    border: 1px solid black;
+    font-size: 30;
+    text-align: center;
+    background: #f5eeee;
+    border-radius: 30px;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+    border: 0;
+    .inner {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .aiQuestionContainer {
+      background: linear-gradient(180deg, #ededed -12.86%, #cfcfcf 127.13%);
+      border-radius: 20px;
+      padding: 1rem;
+      padding-bottom: 0.01rem;
+      padding-top: 0.01rem;
+      width: 75%;
+      text-align: left;
+      margin-bottom: 1rem;
+      .text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #000000;
+      }
+    }
+
+    .userAnswerContainer {
+      background: linear-gradient(359.98deg, #ee4c70 11.39%, #f7cbd5 123.21%);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      align-self: flex-end;
+      border-bottom-left-radius: 20px;
+      padding: 1rem;
+      padding-bottom: 0.01rem;
+      padding-top: 0.01rem;
+      width: 50%;
+      text-align: right;
+      margin-bottom: 1rem;
+      .text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #000000;
+      }
+    }
+    .recording_loading {
+      align-self: flex-end;
+    }
+    .loadingImage {
+      width: 36px;
+    }
+  }
+}
