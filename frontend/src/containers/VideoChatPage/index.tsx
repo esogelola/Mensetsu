@@ -12,6 +12,7 @@ import Sidebar from "../../components/VideoCall/SideBar";
 import Notifications from "../../components/VideoCall/Notifications";
 
 import { ContextProvider } from "../../contexts/SocketContext";
+import Navigation from "../../components/Navigation";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -43,6 +44,7 @@ const VideoChatPage = () => {
   const classes = useStyles();
   return (
     <ContextProvider>
+      <Navigation />
       <div className="ms-camera">
         <div className="ms-camera__section">
           <Typography variant="h2" align="center">

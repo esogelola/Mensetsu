@@ -12,6 +12,7 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 import useQuestions from "../../hooks/useQuestions";
 import { useHistory } from "react-router-dom";
 import useRecorder from "../../hooks/useRecorder";
+import Navigation from "../../components/Navigation";
 
 function SetsuAIPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,6 +31,7 @@ function SetsuAIPage() {
 
   return (
     <Grid container direction="row" spacing={2} className="ms-setsu">
+      <Navigation />
       <Grid item container direction="column" xs={2} spacing={2}>
         <Stack spacing={2}>
           <div className="ms-setsu__container containerTall catLogoContainer">

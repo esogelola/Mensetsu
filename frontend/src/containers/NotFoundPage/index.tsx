@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navigation from "../../components/Navigation";
 
 const NotFound = () => (
   <div>
+    <Navigation />
     <h1>404 - Not Found!</h1>
     <Link to="/">Go Home</Link>
   </div>

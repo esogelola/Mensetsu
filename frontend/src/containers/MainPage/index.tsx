@@ -6,6 +6,7 @@ import "./index.scss";
 import { useHistory } from "react-router-dom";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import useQuestions from "../../hooks/useQuestions";
+import Navigation from "../../components/Navigation";
 function MainPage() {
   let history = useHistory();
   const { questions } = useQuestions();
@@ -17,6 +18,7 @@ function MainPage() {
   };
   return (
     <div className="ms-main">
+      <Navigation />
       <Grid container className="hero">
         <Grid item xs={4} className="ms-main__leftSide">
           <div className="wrapper">
