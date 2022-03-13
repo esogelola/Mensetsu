@@ -11,8 +11,6 @@ import "./index.scss";
 import { AuthContextProvider, useAuthState } from "../../contexts/AuthContext";
 import { GlobalProvider } from "../../contexts/GlobalContext";
 
-import Navigation from "../../components/Navigation";
-
 interface authProps {
   component: any;
   path: string;
@@ -56,7 +54,6 @@ function App() {
       <GlobalProvider>
         <Router>
           <div className="ms-app">
-            <Navigation />
 
             <div className="ms-app__page">
               <Switch>
@@ -71,6 +68,7 @@ function App() {
                   component={ROUTES.SETSU_AI_STATS_CONTAINER}
                 />
                 <UnauthenticatedRoute
+
                   path={ROUTES.APP}
                   component={ROUTES.APP_PAGE_CONTAINER}
                 />
