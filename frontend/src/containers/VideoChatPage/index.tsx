@@ -26,7 +26,9 @@ const VideoChatPage = () => {
                 <Grid item xs={12}>
                   <VideoPlayer />
                 </Grid>
-                <Grid item xs={12}></Grid>
+                <Grid item xs={12}>
+                  <Sidebar>{}</Sidebar>
+                </Grid>
                 <Grid item xs={7}>
                   <div className="ms-setsu__container containerWide ">
                     <p className="containerHeading">Transcription</p>
