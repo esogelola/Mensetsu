@@ -7,6 +7,10 @@ import VIDEO_CHAT_PAGE_CONTAINER from "../containers/VideoChatPage";
 export const LANDING = "/";
 export const APP = "/app";
 
+export const ABOUT = "/about";
+export const PRIVACY = "/privacy";
+
+
 export const SIGN_UP = "/signup";
 export const SIGN_IN = "/signin";
 

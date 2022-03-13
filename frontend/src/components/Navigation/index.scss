@@ -1,10 +1,28 @@
-.cn-nav {
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+.ms-nav {
   button {
-    margin: 5px;
-  }
-
-  &__link {
-    color: white;
+  margin: 5px;  
+}
+  &__logo{
+    color: #4E2331;
     text-decoration: none;
+    font-family:'Fredoka One';
+    font-size: xx-large;
+  }
+  &__stacked{
+    color: #4E2331;
+    text-decoration: none;
+    font-family:'Fredoka';
+    font-size:small;
+    font-weight: 100;
+    position: absolute;
+    padding-top: 40px;
+}
+  &__link {
+    color: #4E2331;
+    text-decoration: none;
+    font-family:'Fredoka';
+    font-size: x-large;
   }
 }
