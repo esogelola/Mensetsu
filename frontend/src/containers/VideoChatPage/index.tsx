@@ -12,16 +12,19 @@ import Sidebar from "../../components/VideoCall/SideBar";
 import Notifications from "../../components/VideoCall/Notifications";
 
 import { ContextProvider } from "../../contexts/SocketContext";
+import Navigation from "../../components/Navigation";
 
 const VideoChatPage = () => {
   return (
     <div className="ms-camera">
     <div className="ms-camera__section">
     <ContextProvider>
+
     <Grid container className="pageGrid">
     <Grid item xs={7}>
       <Grid container className="gridContainer2">
         <Grid item xs={12}>
+
           <VideoPlayer />
         </Grid> 
         <Grid item xs={12}>

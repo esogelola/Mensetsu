@@ -1,0 +1,37 @@
+.circle-signin-1{
+  position: absolute;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+.circle-signin-2{
+  position: absolute;
+  top: calc(0vh + 100px);
+  left: calc(0vw + 150px);
+  z-index: -1;
+}
+.circle-signin-3{
+  position: absolute;
+  top: 0vh;
+  left: calc(50vw - 300px);
+  z-index: -1;
+}
+.circle-signin-4{
+  position: absolute;
+  top: calc(50vh - 100px);
+  left: calc(100vw - 250px);
+  z-index: -1;
+}
+.circle-signin-5{
+  position: absolute;
+  top: calc(100vh - 358px);
+  left: calc(100vw - 346px);
+  z-index: -1;
+}
+.circle-signin-6{
+  position: absolute;
+  top: calc(100vh - 150px);
+  left: calc(0vw + 500px);
+  z-index: -1;
+}

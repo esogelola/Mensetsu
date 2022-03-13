@@ -10,6 +10,9 @@ const useQuestions = () => {
         "Develop a deep knowledge of data structures. You should understand and be able to talk about different data structures and their strengths, weaknesses, and how they compare to each other",
       Questions: [
         "How can we compare between two algorithms written for the same problem?",
+        "What do you understand by the best case, worst case and average case scenario of an algorithm? ",
+        "What do you understand by the Asymptotic Notations?",
+        "Explain the Divide and Conquer Algorithmic Paradigm.",
       ],
     },
     {

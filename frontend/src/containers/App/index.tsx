@@ -11,8 +11,6 @@ import "./index.scss";
 import { AuthContextProvider, useAuthState } from "../../contexts/AuthContext";
 import { GlobalProvider } from "../../contexts/GlobalContext";
 
-import Navigation from "../../components/Navigation";
-
 interface authProps {
   component: any;
   path: string;
@@ -56,7 +54,6 @@ function App() {
       <GlobalProvider>
         <Router>
           <div className="ms-app">
-            <Navigation />
 
             <div className="ms-app__page">
               <Switch>
@@ -66,6 +63,12 @@ function App() {
                   component={ROUTES.SETSU_AI_PAGE_CONTAINER}
                 />
                 <UnauthenticatedRoute
+                  exact
+                  path={ROUTES.STATS}
+                  component={ROUTES.SETSU_AI_STATS_CONTAINER}
+                />
+                <UnauthenticatedRoute
+
                   path={ROUTES.APP}
                   component={ROUTES.APP_PAGE_CONTAINER}
                 />
@@ -79,6 +82,17 @@ function App() {
                   path={ROUTES.VIDEO_CHAT}
                   component={ROUTES.VIDEO_CHAT_PAGE_CONTAINER}
                 />
+                <UnauthenticatedRoute
+                  exact
+                  path={ROUTES.SIGN_IN}
+                  component={ROUTES.SIGN_IN_PAGE_CONTAINER}
+                />
+                <UnauthenticatedRoute
+                  exact
+                  path={ROUTES.SIGN_UP}
+                  component={ROUTES.SIGN_UP_PAGE_CONTAINER}
+                />
+
                 <Route component={ROUTES.NOTFOUND_PAGE_CONTAINER} />
               </Switch>
             </div>
