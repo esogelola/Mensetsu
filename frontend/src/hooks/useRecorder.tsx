@@ -26,7 +26,7 @@ const useRecorder = () => {
 
     // Manage recorder state.
     if (isRecording) {
-      SpeechRecognition.startListing();
+      SpeechRecognition.startListening();
       // recorder.start();
     } else {
       SpeechRecognition.stopListening();
