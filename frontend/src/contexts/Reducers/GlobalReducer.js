@@ -18,10 +18,10 @@ const GlobalReducer = (state, action) => {
         ...state,
         setsuAI: { ...state.setsuAI, aiResponses: action.payload },
       };
-    case GLOBAL_ACTIONS.SET_NEXT_INDEX:
+    case GLOBAL_ACTIONS.SET_LOADING_NET:
       return {
         ...state,
-        setsuAI: { ...state.setsuAI, currentIndex: action.payload },
+        setsuAI: { ...state.setsuAI, setLoadingNet: action.payload },
       };
 
     default:

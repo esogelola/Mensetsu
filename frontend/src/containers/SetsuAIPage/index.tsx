@@ -6,29 +6,56 @@ import { styled } from "@mui/material/styles";
 import catLogo from "../../assets/solo-cat.svg";
 
 import "./index.scss";
-import Webcam from "react-webcam";
 import Video from "../../components/Video";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import useQuestions from "../../hooks/useQuestions";
 import { useHistory } from "react-router-dom";
 import useRecorder from "../../hooks/useRecorder";
+
+import { CircularProgress, LinearProgress } from "@material-ui/core";
+
 import Navigation from "../../components/Navigation";
+
 
 function SetsuAIPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { setsuAI } = useContext<any>(GlobalContext);
   const { selectedTopic } = useQuestions();
-  let [audioURL, isRecording, startRecording, stopRecording, blob] =
+  let [audioURL, isRecording, startRecording, stopRecording, transcript] =
     useRecorder();
-  const [questionsAsked, setQuestionsAsked] = useState([]);
-  const [userResponses, setUserResponses] = useState([]);
+  const [questionsAsked, setQuestionsAsked] = useState<any>([]);
+  const [userResponses, setUserResponses] = useState<any>([]);
 
   const history = useHistory();
   const toggleRecording = () => {
-    if (isRecording) stopRecording();
-    else startRecording();
+    if (isRecording) {
+      if (transcript.trim() !== "") {
+        const newUserResponses = userResponses;
+        userResponses[currentIndex] = transcript;
+        setUserResponses(newUserResponses);
+        const usedQuestions = questionsAsked;
+        usedQuestions[currentIndex] = selectedTopic.Questions[currentIndex];
+        setQuestionsAsked(usedQuestions);
+      }
+
+      stopRecording();
+    } else startRecording();
   };
 
+  const handleNextQuestion = () => {
+    const newIndex = currentIndex + 1;
+
+    if (
+      newIndex < selectedTopic.Questions.length &&
+      userResponses[currentIndex]
+    ) {
+      setCurrentIndex(newIndex);
+    } else {
+      // Submit here go to
+
+      history.push("/setsu/stats");
+    }
+  };
   return (
     <Grid container direction="row" spacing={2} className="ms-setsu">
       <Navigation />
@@ -45,17 +72,18 @@ function SetsuAIPage() {
           </div>
 
           <div className="ms-setsu__container containerSmall ">
-            <p className="containerHeading">Emotion</p>
+            <p className="containerHeading">Expression</p>
             <p className={`topicText emotion-${setsuAI.emotion}`}>
               {setsuAI.emotion}
+              {setsuAI.setLoadingNet && <LinearProgress />}
             </p>
           </div>
-          <button
-            className="btn-stop"
-            onClick={toggleRecording}
-            disabled={questionsAsked.length < userResponses.length}
-          >
-            {isRecording ? "Stop Recording" : "Start Recording"}
+          <button className="btn-stop" onClick={toggleRecording}>
+            {isRecording
+              ? "Stop Recording"
+              : questionsAsked.length > userResponses.length - 1
+              ? "Start Recording"
+              : "Redo Recording"}
           </button>
         </Stack>
       </Grid>
@@ -68,12 +96,10 @@ function SetsuAIPage() {
                   return (
                     <>
                       <div className="aiQuestionContainer">
-                        <p className="text">
-                          {selectedTopic.Questions[currentIndex]}
-                        </p>
+                        <p className="text">{selectedTopic.Questions[idx]}</p>
                       </div>
 
-                      {userResponses.length > 0 && (
+                      {idx < questionsAsked.length && (
                         <div className="userAnswerContainer">
                           <p className="text">{userResponses[idx]}</p>
                         </div>
@@ -101,19 +127,19 @@ function SetsuAIPage() {
             <Video />
           </div>
           <div className="btn_group">
-            <button
-              className="btn"
-              onClick={() => {
-                setCurrentIndex(currentIndex + 1);
-              }}
-            >
-              Next
+            <button className="btn__next" onClick={handleNextQuestion}>
+              {currentIndex === selectedTopic.Questions.length - 1
+                ? "Submit"
+                : "Next"}
             </button>
             <button className="btn">Pause</button>
           </div>
           <div className="question_box">
-            <p>What do</p>
-            {setsuAI.whatDo}
+            <p>Notes</p>
+            <textarea
+              className="noteSection"
+              placeholder="write notes here..."
+            ></textarea>
           </div>
         </div>
       </Grid>

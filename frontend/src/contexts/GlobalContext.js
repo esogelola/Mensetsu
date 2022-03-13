@@ -10,6 +10,7 @@ const initialState = {
     aiResponses: [],
     currentIndex: 0,
     whatDo: "Do this",
+    setLoadingNet: true,
   },
 };
 
@@ -28,9 +29,8 @@ export const GlobalProvider = ({ children }) => {
     dispatch({ type: GLOBAL_ACTIONS.SET_AI_RESPONSES, payload: token });
   };
 
-  const setNextIndex = (token) => {
-    console.log(token);
-    dispatch({ type: GLOBAL_ACTIONS.SET_NEXT_INDEX, payload: token });
+  const setLoadingNet = (token) => {
+    dispatch({ type: GLOBAL_ACTIONS.SET_LOADING_NET, payload: token });
   };
 
   return (
@@ -39,7 +39,7 @@ export const GlobalProvider = ({ children }) => {
         setTopicID,
         setEmotion,
         setAIResponses,
-        setNextIndex,
+        setLoadingNet,
         setsuAI: state.setsuAI,
       }}
     >
