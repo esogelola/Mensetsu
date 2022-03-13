@@ -11,7 +11,6 @@ import { config } from "./config";
 
 class Firebase {
   constructor() {
-    console.log("This ran");
     initializeApp(config);
   }
 
