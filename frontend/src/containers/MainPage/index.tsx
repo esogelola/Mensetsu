@@ -27,7 +27,14 @@ function MainPage() {
               Start honing your interview skills by either requesting a
               ProKitten or selecting a topic with SetsuAI nyaaa~
             </p>
-            <button className="btn">Request ProKitten</button>
+            <button
+              className="btn"
+              onClick={() => {
+                history.push("/prokitten");
+              }}
+            >
+              Request ProKitten
+            </button>
           </div>
         </Grid>
         <Grid item xs className="ms-main__catLogoSide">
