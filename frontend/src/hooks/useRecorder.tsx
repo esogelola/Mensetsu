@@ -17,19 +17,21 @@ const useRecorder = () => {
 
   useEffect(() => {
     // Lazily obtain recorder first time we're recording.
-    if (recorder === null) {
-      if (isRecording) {
-        requestRecorder().then(setRecorder, console.error);
-      }
-      return;
-    }
+    // if (recorder === null) {
+    //   if (isRecording) {
+    //     requestRecorder().then(setRecorder, console.error);
+    //   }
+    //   return;
+    // }
 
     // Manage recorder state.
     if (isRecording) {
       SpeechRecognition.startListening();
+
       // recorder.start();
     } else {
       SpeechRecognition.stopListening();
+
       // recorder.stop();
       // resetTranscript()
     }
@@ -45,8 +47,8 @@ const useRecorder = () => {
       setAudioURL(URL.createObjectURL(e.data));
     };
 
-    recorder.addEventListener("dataavailable", handleData);
-    return () => recorder.removeEventListener("dataavailable", handleData);
+    // recorder.addEventListener("dataavailable", handleData);
+    // return () => recorder.removeEventListener("dataavailable", handleData);
   }, [recorder, isRecording]);
 
   const startRecording = () => {
@@ -57,7 +59,13 @@ const useRecorder = () => {
     setIsRecording(false);
   };
 
-  return [audioURL, isRecording, startRecording, stopRecording, blob] as const;
+  return [
+    audioURL,
+    isRecording,
+    startRecording,
+    stopRecording,
+    transcript,
+  ] as const;
 };
 
 async function requestRecorder() {
